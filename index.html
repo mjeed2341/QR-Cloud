@@ -2,13 +2,14 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Abdulmajeed QR Cloud V6</title>
+<title>Abdulmajeed QR Cloud V7</title>
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 </head>
+
 <body>
-<h1>Abdulmajeed QR Cloud – V6</h1>
+<h1>Abdulmajeed QR Cloud – V7 (Enhanced)</h1>
 
 <div class="upload-box">
   <h2>رفع ملف</h2>
@@ -21,6 +22,14 @@
   <div id="fileList"></div>
 </div>
 
+<!-- Viewer Section -->
+<div id="viewerBox">
+    <h2>📄 استعراض الملف</h2>
+    <iframe id="viewerFrame" style="display:none;"></iframe>
+    <button id="closeViewer" onclick="closeViewer()" style="display:none;">إغلاق الملف</button>
+</div>
+
+<!-- QR Page -->
 <div id="qrPage" class="qr-page">
   <h2>QR للملف</h2>
   <canvas id="qrCanvas"></canvas>
@@ -35,5 +44,6 @@ if('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw.js');
 }
 </script>
+
 </body>
 </html>
